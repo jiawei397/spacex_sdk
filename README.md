@@ -1,3 +1,12 @@
+# spacex_sdk
+
+## Example
+
+run as `cargo run --example simple`
+
+auto generate:
+
+```rust
 use jwfetch::{FetchError, Method};
 use log::info;
 use serde::{Deserialize, Serialize};
@@ -34,7 +43,6 @@ pub async fn get_user_info() -> Result<UserInfo, FetchError> {
 
 #[tokio::main]
 async fn main() {
-    env_logger::init_from_env(env_logger::Env::new().default_filter_or("debug"));
     match get_user_info().await {
         Ok(user) => {
             info!("userinfo: {:?}", user);
@@ -44,3 +52,4 @@ async fn main() {
         }
     }
 }
+```
